@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memorejournal — Jurnal & Stationery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Literata:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #1c1f1a;
+    --parchment: #ece4d3;
+    --moss: #4a5a3f;
+    --gold: #b08d4f;
+    --rust: #8c4a35;
+    --line: rgba(236,228,211,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--parchment);
+    font-family:'Literata', serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  .display{font-family:'Fraunces', serif; font-optical-sizing:auto;}
+
+  /* texture */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(176,141,79,0.06), transparent 40%),
+      radial-gradient(circle at 85% 75%, rgba(140,74,53,0.07), transparent 45%);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  header{
+    padding:64px 24px 48px;
+    text-align:center;
+    position:relative;
+    z-index:1;
+  }
+  .eyebrow{
+    font-family:'Literata', serif;
+    font-style:italic;
+    letter-spacing:0.08em;
+    color:var(--gold);
+    font-size:0.85rem;
+    margin-bottom:18px;
+  }
+  h1.brand{
+    font-size:clamp(2.4rem, 8vw, 4.2rem);
+    font-weight:500;
+    letter-spacing:-0.01em;
+  }
+  .tagline{
+    margin-top:16px;
+    max-width:480px;
+    margin-left:auto;
+    margin-right:auto;
+    color:rgba(236,228,211,0.75);
+    font-size:1rem;
+  }
+  .divider{
+    width:48px; height:1px;
+    background:var(--gold);
+    margin:32px auto 0;
+    opacity:0.6;
+  }
+
+  main{position:relative; z-index:1; padding:0 20px 80px;}
+
+  .category{
+    max-width:920px;
+    margin:0 auto 64px;
+  }
+  .category-head{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    margin-bottom:24px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:14px;
+  }
+  .category-head h2{
+    font-size:1.5rem;
+    font-weight:500;
+  }
+  .category-head span{
+    font-size:0.8rem;
+    color:var(--gold);
+    font-style:italic;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+    gap:20px;
+  }
+  .card{
+    background:rgba(236,228,211,0.03);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    transition:border-color 0.25s ease, transform 0.25s ease;
+  }
+  .card:hover{
+    border-color:rgba(176,141,79,0.45);
+    transform:translateY(-2px);
+  }
+  .card h3{
+    font-family:'Fraunces', serif;
+    font-size:1.2rem;
+    font-weight:500;
+  }
+  .card p{
+    font-size:0.9rem;
+    color:rgba(236,228,211,0.65);
+    flex-grow:1;
+  }
+  .price{
+    font-family:'Fraunces', serif;
+    color:var(--gold);
+    font-size:1.05rem;
+    margin-top:4px;
+  }
+  .cta-row{
+    display:flex;
+    gap:10px;
+    margin-top:8px;
+  }
+  .btn{
+    flex:1;
+    text-align:center;
+    padding:10px 14px;
+    font-size:0.82rem;
+    text-decoration:none;
+    border:1px solid var(--line);
+    color:var(--parchment);
+    letter-spacing:0.02em;
+    transition:background 0.2s ease, border-color 0.2s ease;
+  }
+  .btn.wa{
+    background:var(--moss);
+    border-color:var(--moss);
+  }
+  .btn.wa:hover{background:#5b6e4d;}
+  .btn.shopee{
+    background:transparent;
+  }
+  .btn.shopee:hover{border-color:var(--rust); color:var(--rust);}
+
+  footer{
+    text-align:center;
+    padding:48px 20px 56px;
+    position:relative; z-index:1;
+    border-top:1px solid var(--line);
+  }
+  footer p{
+    font-size:0.85rem;
+    color:rgba(236,228,211,0.5);
+  }
+  footer .brand-mark{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    color:var(--gold);
+    margin-bottom:8px;
+    font-size:1rem;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .card{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">jurnal &amp; perkakas tulis</div>
+  <h1 class="brand display">Memorejournal</h1>
+  <p class="tagline">Catatan yang menua dengan baik — jurnal dan stationery dengan jiwa Nusantara, dibuat untuk dipakai bertahun-tahun, bukan sekadar disimpan.</p>
+  <div class="divider"></div>
+</header>
+
+<main>
+
+  <section class="category" id="jurnal">
+    <div class="category-head">
+      <h2 class="display">Jurnal</h2>
+      <span>buku catatan utama</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <h3>Jurnal Bujo Soul</h3>
+        <p>Bullet journal bergaris titik, sampul hardcover motif botani gelap.</p>
+        <div class="price">Rp 85.000</div>
+        <div class="cta-row">
+          <a class="btn wa" href="https://wa.me/6287862366324?text=Halo%2C%20saya%20mau%20pesan%20Jurnal%20Bujo%20Soul" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn shopee" href="https://s.shopee.co.id/5VT4ciovPX" target="_blank" rel="noopener">Shopee</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Jurnal LAKON</h3>
+        <p>Jurnal terbimbing untuk pria, struktur reflektif dengan nuansa Nusantara.</p>
+        <div class="price">Rp 95.000</div>
+        <div class="cta-row">
+          <a class="btn wa" href="https://wa.me/6287862366324?text=Halo%2C%20saya%20mau%20pesan%20Jurnal%20LAKON" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn shopee" href="https://s.shopee.co.id/5VT4ciovPX" target="_blank" rel="noopener">Shopee</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Jurnal Polos Klasik</h3>
+        <p>Kertas tebal anti-tembus, cocok untuk tinta dan cat air ringan.</p>
+        <div class="price">Rp 70.000</div>
+        <div class="cta-row">
+          <a class="btn wa" href="https://wa.me/6287862366324?text=Halo%2C%20saya%20mau%20pesan%20Jurnal%20Polos%20Klasik" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn shopee" href="https://s.shopee.co.id/5VT4ciovPX" target="_blank" rel="noopener">Shopee</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="category" id="stationery">
+    <div class="category-head">
+      <h2 class="display">Stationery</h2>
+      <span>perkakas pendukung</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <h3>Sticky Note Botanical</h3>
+        <p>Set 5 desain ilustrasi botani gelap, gaya ukiran klasik.</p>
+        <div class="price">Rp 25.000</div>
+        <div class="cta-row">
+          <a class="btn wa" href="https://wa.me/6287862366324?text=Halo%2C%20saya%20mau%20pesan%20Sticky%20Note%20Botanical" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn shopee" href="https://s.shopee.co.id/5VT4ciovPX" target="_blank" rel="noopener">Shopee</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Wax Seal Set</h3>
+        <p>Stempel lilin motif wayang, lengkap dengan lilin warna tanah.</p>
+        <div class="price">Rp 55.000</div>
+        <div class="cta-row">
+          <a class="btn wa" href="https://wa.me/6287862366324?text=Halo%2C%20saya%20mau%20pesan%20Wax%20Seal%20Set" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn shopee" href="https://s.shopee.co.id/5VT4ciovPX" target="_blank" rel="noopener">Shopee</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Sticker Sheet Abandoned Garden</h3>
+        <p>Lembar stiker cat air, seri taman terbengkalai bab pertama.</p>
+        <div class="price">Rp 18.000</div>
+        <div class="cta-row">
+          <a class="btn wa" href="https://wa.me/6287862366324?text=Halo%2C%20saya%20mau%20pesan%20Sticker%20Sheet%20Abandoned%20Garden" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn shopee" href="https://s.shopee.co.id/5VT4ciovPX" target="_blank" rel="noopener">Shopee</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="brand-mark">Memorejournal</div>
+  <p>Tangerang, Indonesia — pesan langsung lewat WhatsApp atau Shopee.</p>
+</footer>
+
+</body>
+</html>
